@@ -11,7 +11,9 @@ namespace DemoMVC2020.Controllers
         // GET: Movie
         public ActionResult Index()
         {
-            return View();
+            var db = new Models.AdventureWorksEntities();
+            var movie = db.Movie2.ToList();
+            return View(movie);
         }
 
         //public string Index()
